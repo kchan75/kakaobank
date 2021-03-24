@@ -36,3 +36,5 @@
     3. 기동 후 브라우저를 통하여 http://localhost:8080 으로 접속 후 '제출' 버튼 클릭 (여러번 송신가능)
 	![로컬_화면_1](https://user-images.githubusercontent.com/25301903/112365714-4ff4aa80-8d1b-11eb-982d-a1611e64b585.PNG)
 	
+        송신후에는 다음과 같이 수신내역이 보입니다.
+	![로컬_화면_2](https://user-images.githubusercontent.com/25301903/112365910-8c280b00-8d1b-11eb-9acb-e3e8f40da9b8.PNG)
