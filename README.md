@@ -33,8 +33,9 @@
        (필수아님)scouter가 있다면 아래의 옵션을 경로에 맞게 변경 후 추가하여 모니터링 가능
 	-javaagent:"D:\kakaobank\scouter\agent.java\scouter.agent.jar" -Dscouter.config="D:\kakaobank\scouter\agent.java\conf\scouter.conf" -Dobj_name=outServer
 
-    3. 기동 후 브라우저를 통하여 http://localhost:8080 으로 접속 후 '제출' 버튼 클릭
-    
+    3. 기동 후 브라우저를 통하여 http://localhost:8080 으로 접속 후 '제출' 버튼 클릭 (여러번 송신가능)
+	
+	
 	![로컬_화면_1](https://user-images.githubusercontent.com/25301903/112353323-fab29c00-8d0e-11eb-83da-271877db0c4d.PNG)
 
 	![로컬_화면_2](https://user-images.githubusercontent.com/25301903/112353324-fab29c00-8d0e-11eb-96e4-a2901e505beb.PNG)
@@ -49,3 +50,7 @@
 ![GCP_에러로그샘플](https://user-images.githubusercontent.com/25301903/112353334-fdad8c80-8d0e-11eb-98ff-ce746372fe56.PNG)
 ![GCP_출력로그샘플](https://user-images.githubusercontent.com/25301903/112353335-fdad8c80-8d0e-11eb-9d6a-77f519ee4777.PNG)
 ![GCP_화면_1](https://user-images.githubusercontent.com/25301903/112353338-fe462300-8d0e-11eb-8a92-8dd2f563ff0f.PNG)
+![GCP_구조도](https://user-images.githubusercontent.com/25301903/112364909-5f272880-8d1a-11eb-88ae-718a0f7094a1.PNG)
+
+
+
