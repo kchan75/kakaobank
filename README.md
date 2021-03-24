@@ -74,5 +74,5 @@
 	  ![서버목록](https://user-images.githubusercontent.com/25301903/112369537-9fd57080-8d1f-11eb-89ba-adae8962d042.PNG)
 		![GCP_로그](https://user-images.githubusercontent.com/25301903/112369555-a4018e00-8d1f-11eb-8ff6-1ea8b7cfbe2a.PNG)
 	    
-	  # 위의 GCP환경은 VM서버에 구성하였지만 in, biz, out 으로 분리해 놓은 서버들을 이미지화 하여 docker/k8s등 컨테이너 환경에서도 구현가능합니다.
+	  #위의 GCP환경은 VM서버에 구성하였지만 in, biz, out 으로 분리해 놓은 서버들을 이미지화 하여 docker/k8s등 컨테이너 환경에서도 구현가능합니다.
 	
