@@ -37,13 +37,18 @@
 	-javaagent:"D:\kakaobank\scouter\agent.java\scouter.agent.jar" -Dscouter.config="D:\kakaobank\scouter\agent.java\conf\scouter.conf" -Dobj_name=outServer
 
     3. 기동 후 브라우저를 통하여 http://localhost:8080 으로 접속 후 '제출' 버튼 클릭 (여러번 송신가능)
-	![로컬_화면_1](https://user-images.githubusercontent.com/25301903/112365714-4ff4aa80-8d1b-11eb-982d-a1611e64b585.PNG)
+![로컬_화면_1](https://user-images.githubusercontent.com/25301903/112365714-4ff4aa80-8d1b-11eb-982d-a1611e64b585.PNG)
 	
         송신후에는 다음과 같이 수신내역이 보입니다.
-	![로컬_화면_2](https://user-images.githubusercontent.com/25301903/112365910-8c280b00-8d1b-11eb-9acb-e3e8f40da9b8.PNG)
+![로컬_화면_2](https://user-images.githubusercontent.com/25301903/112365910-8c280b00-8d1b-11eb-9acb-e3e8f40da9b8.PNG)
 
 	로그는 기동옵션의 logs 설정 위치에 각 모듈별 INLOG, BIZLOG, OUTLOG, ERRLOG 를 생성합니다. 
+	# 출력로그 샘플 
+![GCP_출력로그샘플](https://user-images.githubusercontent.com/25301903/112368671-ab746780-8d1e-11eb-845b-9712a45cfedd.PNG)
 
+	
+	# 에러로그샘플
+![GCP_에러로그샘플](https://user-images.githubusercontent.com/25301903/112368650-a7484a00-8d1e-11eb-9098-3f9d41c4147f.PNG)
 
  - 두번째 : 구글클라우드(GCP)에 접속하여(http://35.225.246.187:8000/)  테스트 하는 방법
  
@@ -59,6 +64,7 @@
 	  ![GCP_화면_1](https://user-images.githubusercontent.com/25301903/112367645-892e1a00-8d1d-11eb-8c06-6ef94a291ce1.PNG)
 	  ![GCP_화면_2](https://user-images.githubusercontent.com/25301903/112367649-89c6b080-8d1d-11eb-851e-13950f70a6a0.PNG)
 
+	  다음과 같이 테스트 가능합니다.
 	    
 	    
 
