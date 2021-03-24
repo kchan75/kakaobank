@@ -64,10 +64,15 @@
 	  ![GCP_화면_1](https://user-images.githubusercontent.com/25301903/112367645-892e1a00-8d1d-11eb-8c06-6ef94a291ce1.PNG)
 	  ![GCP_화면_2](https://user-images.githubusercontent.com/25301903/112367649-89c6b080-8d1d-11eb-851e-13950f70a6a0.PNG)
 
-	  다음과 같이 테스트 가능합니다.
+	  #haproxy.cfg 밸런싱 설정
+	  ![haproxy_설정PNG](https://user-images.githubusercontent.com/25301903/112369411-80d6de80-8d1f-11eb-8d83-16e0d054f068.PNG)
+	  
+	  #scouter client (35.225.246.187:6100) 
+	  ![GCP_scouter](https://user-images.githubusercontent.com/25301903/112369469-8fbd9100-8d1f-11eb-8106-558bf6c3c418.PNG)
 	    
-	    
-
+	  #서버 프로세스 및 파일로그
+	  ![서버목록](https://user-images.githubusercontent.com/25301903/112369537-9fd57080-8d1f-11eb-89ba-adae8962d042.PNG)
+		![GCP_로그](https://user-images.githubusercontent.com/25301903/112369555-a4018e00-8d1f-11eb-8ff6-1ea8b7cfbe2a.PNG)
 	    
 	    
 	
