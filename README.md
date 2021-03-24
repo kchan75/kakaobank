@@ -18,6 +18,9 @@
 
 
  - 첫번째 : Only jar파일들로 테스트 하는 방법
+
+![단일_구조도](https://user-images.githubusercontent.com/25301903/112368301-4587e000-8d1e-11eb-9865-55aebe72c9a4.PNG)
+
    1. 위의 inserver-1.0.jar, bizserver-1.0.jar, outserver-1.0.jar 을 다운받습니다.
    2. 아래의 명령어를 통하여 각 모듈을 1개씩 기동합니다.
    
@@ -50,11 +53,11 @@
 	    또한 각 서버들은 scouter agent와 함께 기동되어 scouter를 통해 각 서버들의 모니터링이 가능합니다. 
 	    (scouter client 설치 후 35.225.246.187:6100 으로 접속 후 admin/admin 을 로그인 가능)
 	    
-	    ![GCP_구조도](https://user-images.githubusercontent.com/25301903/112367588-787da400-8d1d-11eb-9043-e59603d357de.PNG)
+	  ![GCP_구조도](https://user-images.githubusercontent.com/25301903/112367588-787da400-8d1d-11eb-9043-e59603d357de.PNG)
 	    
 	    다음과 같이 테스트 가능합니다.
-	    ![GCP_화면_1](https://user-images.githubusercontent.com/25301903/112367645-892e1a00-8d1d-11eb-8c06-6ef94a291ce1.PNG)
-	    ![GCP_화면_2](https://user-images.githubusercontent.com/25301903/112367649-89c6b080-8d1d-11eb-851e-13950f70a6a0.PNG)
+	  ![GCP_화면_1](https://user-images.githubusercontent.com/25301903/112367645-892e1a00-8d1d-11eb-8c06-6ef94a291ce1.PNG)
+	  ![GCP_화면_2](https://user-images.githubusercontent.com/25301903/112367649-89c6b080-8d1d-11eb-851e-13950f70a6a0.PNG)
 
 	    
 	    
