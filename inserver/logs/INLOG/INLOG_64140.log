@@ -1,0 +1,48 @@
+{
+  "timestamp" : "2021-03-24T19:08:43",
+  "level" : "INFO",
+  "thread" : "http-nio-8080-exec-5",
+  "logger" : "com.kakaobank.in.inlog.InLog",
+  "message" : "{\"biz\":{\"service\":\"testService\",\"inputData\":\"INDATA\",\"outputData\":\"OUTDATA\"},\"common\":{\"guid\":\"2021-ohmkgzxabsd\",\"trxDatetim\":\"1616580523204\",\"requestType\":\"S\",\"responseType\":\"NM\"}}",
+  "context" : "default"
+}
+{
+  "timestamp" : "2021-03-24T19:08:44",
+  "level" : "INFO",
+  "thread" : "http-nio-8080-exec-6",
+  "logger" : "com.kakaobank.in.inlog.InLog",
+  "message" : "{\"biz\":{\"service\":\"testService\",\"inputData\":\"INDATA\",\"outputData\":\"OUTDATA\"},\"common\":{\"guid\":\"2021-m9ly0f9jl9p\",\"trxDatetim\":\"1616580524808\",\"requestType\":\"S\",\"responseType\":\"NM\"}}",
+  "context" : "default"
+}
+{
+  "timestamp" : "2021-03-24T19:08:45",
+  "level" : "INFO",
+  "thread" : "http-nio-8080-exec-7",
+  "logger" : "com.kakaobank.in.inlog.InLog",
+  "message" : "{\"biz\":{\"service\":\"testService\",\"inputData\":\"INDATA\",\"outputData\":\"OUTDATA\"},\"common\":{\"guid\":\"2021-22yq8682q2v\",\"trxDatetim\":\"1616580525066\",\"requestType\":\"S\",\"responseType\":\"NM\"}}",
+  "context" : "default"
+}
+{
+  "timestamp" : "2021-03-24T19:08:45",
+  "level" : "INFO",
+  "thread" : "http-nio-8080-exec-8",
+  "logger" : "com.kakaobank.in.inlog.InLog",
+  "message" : "{\"biz\":{\"service\":\"testService\",\"inputData\":\"INDATA\",\"outputData\":\"OUTDATA\"},\"common\":{\"guid\":\"2021-u7gx8o5rua\",\"trxDatetim\":\"1616580525262\",\"requestType\":\"S\",\"responseType\":\"NM\"}}",
+  "context" : "default"
+}
+{
+  "timestamp" : "2021-03-24T19:08:45",
+  "level" : "INFO",
+  "thread" : "http-nio-8080-exec-9",
+  "logger" : "com.kakaobank.in.inlog.InLog",
+  "message" : "{\"biz\":{\"service\":\"testService\",\"inputData\":\"INDATA\",\"outputData\":\"OUTDATA\"},\"common\":{\"guid\":\"2021-u4jyj9ia6y\",\"trxDatetim\":\"1616580525429\",\"requestType\":\"S\",\"responseType\":\"NM\"}}",
+  "context" : "default"
+}
+{
+  "timestamp" : "2021-03-24T19:08:45",
+  "level" : "INFO",
+  "thread" : "http-nio-8080-exec-10",
+  "logger" : "com.kakaobank.in.inlog.InLog",
+  "message" : "{\"biz\":{\"service\":\"testService\",\"inputData\":\"INDATA\",\"outputData\":\"OUTDATA\"},\"common\":{\"guid\":\"2021-m7569504v88\",\"trxDatetim\":\"1616580525586\",\"requestType\":\"S\",\"responseType\":\"NM\"}}",
+  "context" : "default"
+}

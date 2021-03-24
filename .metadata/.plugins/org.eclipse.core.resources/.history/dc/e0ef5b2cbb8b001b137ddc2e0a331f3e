@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+	<!-- logback에 대한 기본적인 설정을 base.xml을 통해서 제공함.console,file appender 를 base.xml에 include 하고 있음-->
+    <include resource="org/springframework/boot/logging/logback/base.xml" />
+	
+	<property name="LOG_DIR" value="${logs}"/>
+	    
+    <appender name="BIZLOG" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${LOG_DIR}/BIZLOG_${pid}.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${LOG_DIR}/BIZLOG_%d{yyyy-MM-dd}.log</fileNamePattern>
+            <maxHistory>30</maxHistory>
+        </rollingPolicy>
+        <encoder class="ch.qos.logback.core.encoder.LayoutWrappingEncoder"> 
+	        <layout class="ch.qos.logback.contrib.json.classic.JsonLayout"> 
+	        <timestampFormat>yyyy-MM-dd'T'HH:mm:ss</timestampFormat> 
+	        <appendLineSeparator>true</appendLineSeparator> 
+		        <jsonFormatter class="ch.qos.logback.contrib.jackson.JacksonJsonFormatter"> 
+		        	<prettyPrint>true</prettyPrint> 
+		        </jsonFormatter> 
+	        </layout>
+        </encoder>
+    </appender>
+
+	<!-- 다른 불필요 설정 생략~~~ -->
+
+    <logger name="com.kakaobank.biz.bizlog" level="INFO" additivity="false">
+        <appender-ref ref="BIZLOG" />
+    </logger>
+
+    <!-- TRACE > DEBUG > INFO > WARN > ERROR, 대소문자 구분 안함 -->
+    <!-- root는 전역으로 INFO 레벨 이상인 로그만 남기고 있다.-->
+    <root level="INFO">
+        <appender-ref ref="CONSOLE" />        
+    </root>
+</configuration>

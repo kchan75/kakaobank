@@ -1,0 +1,10 @@
+const api_key = process.env.In_host;
+
+window.onload = function(){
+    var hw = document.getElementById('hw');
+    hw.addEventListener('click', function(){
+//        alert('Hello world');
+        alert(api_key);
+        alert('test');
+    })
+}

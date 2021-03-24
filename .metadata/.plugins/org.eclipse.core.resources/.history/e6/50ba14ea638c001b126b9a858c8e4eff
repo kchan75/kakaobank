@@ -1,0 +1,13 @@
+
+public class TestVO {
+	
+	String rStr1;
+	String rStr2;
+	String rStr3;
+	
+	Int rInt1;
+	Int rInt2;
+	Int rInt3;
+	
+	
+}

@@ -1,0 +1,202 @@
+<%@ page contentType="text/html; charset=UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%
+    request.setCharacterEncoding("UTF-8"); 
+    String cp = request.getContextPath(); 
+%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>JSON형식으로 데이터 주고 받기</title>
+<script type="text/javascript" src="<%=cp%>/data/js/jquery-3.4.1.min.js"></script>
+ 
+<script type="text/javascript">
+ 
+     // test1.jsp =>  javascript로만 Ajax를 구현 
+    // test2.jsp => JQuery에 있는 Ajax 기능을 통해서 Ajax를 구현 (많이씀)
+    // test3.jsp => JQuery로만 Ajax를 구현
+ 
+    // 이 예제는 test2.jsp에서의 방식을 압축한 느낌임
+    $(function() {
+ 
+        $("#saveButton").click(function() {
+ 
+            var value1 = $("#userId").val();
+            var value2 = $("#userPwd").val();
+ 
+             //1. Get방식으로 데이터를 넘기는 법 
+            $.get("test3_ok.jsp",{userId:value1,userPwd:value2},//userId=value1
+ 
+                // get방식으로 보낸 데이터 (test3_ok.jsp) 결과값 처리된걸 
+                //args에서 받음 
+                function(args){
+ 
+                // 결과값 받아서 복잡한 작업을 추가해야하면 이 사이에서 해주면 됨
+ 
+                // 그러고서, 결과 출력
+                $("#resultDIV").html(args); 
+            }); 
+ 
+     //GET방식과 POST방식 둘다 기재할 수 없으므로 주석처리 
+/*             // 2.Post방식
+            $.get("test3_ok.jsp",{userId:value1,userPwd:value2},
+                    function(args){
+                    $("#resultDIV").html(args); 
+                });
+        }); */
+ 
+ 
+            $("#clearButton").click(function() {
+                $("#resultDIV").empty();
+            });
+    });
+    });
+ 
+ 
+ 
+});
+ 
+ 
+ 
+</script>
+ 
+</head>
+<body>
+ 
+    아이디:
+    <input type="text" id="userId" />
+    <br /> 패스워드:
+    <input type="text" id="userPwd" />
+    <br />
+ 
+    <button id="sendButton">전송</button>
+ 
+    <br/>
+    <br/>
+    <div id="resultDIV"></div>
+ 
+ 
+</body>
+</html>
+<%@ page contentType="text/html; charset=UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%
+    request.setCharacterEncoding("UTF-8");
+    String cp = request.getContextPath();
+%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="<%=cp%>/data/js/jquery-3.4.1.min.js"></script>
+ 
+<script type="text/javascript">
+ 
+// test4.jsp : jQuery에 있는 ajax의 기능 이용하여 get,post방식으로 데이터 넘기기
+ 
+$(document).ready(function(){
+ 
+    $("#saveButton").click(function(){
+ 
+        var params = "userId=" +$("#userId").val() +
+                    "&userPwd=" +$("#userPwd").val();
+ 
+        $.ajax({
+ 
+            type:"POST",
+            url:"test4_ok.jsp",
+            data:params,
+            success:function(args){
+                $("#resultDIV").html(args);
+            },
+            beforeSend:showRequest,
+ 
+            error:function(e){
+ 
+                alert(e.responseText);//텍스트로 받음
+ 
+            }
+ 
+        });
+ 
+    });
+ 
+    //클리어 시키는 작업
+    $("#clearButton").click(function(){
+        $("#resultDIV").empty();
+    });
+ 
+    //데이터넣는지 확인하는 함수
+    function showRequest() {
+ 
+        //무조건 트루
+        var flag = true;
+ 
+        if(!$("#userId").val()){
+ 
+            alert("아이디을 입력하세요!");
+            $("#userId").focus();
+            return false;
+        }
+ 
+        if(!$("#userPwd").val()){
+ 
+            alert("패스워드을 입력하세요!");
+            $("#userPwd").focus();
+            return false;
+        }
+ 
+        return flag;
+ 
+    }
+ 
+ 
+});
+ 
+ 
+</script>
+ 
+</head>
+<body>
+    아이디:
+    <input type="text" id="userId" />
+    <br/> 패스워드:
+    <input type="text" id="userPwd" />
+    <br/>
+ 
+    <button id="saveButton">전송</button>
+    <button id="clearButton">지우기</button>
+ 
+    <br/>
+    <br/>
+    <div id="resultDIV"></div>
+ 
+</body>
+</html>
+<%@ page contentType="text/html; charset=UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%
+    request.setCharacterEncoding("UTF-8"); 
+    String cp = request.getContextPath(); 
+ 
+    String userId = request.getParameter("userId");
+    String userPwd = request.getParameter("userPwd");
+ 
+%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+ 
+아이디:<%=userId %><br/>
+패스워드:<%=userPwd %><br/>
+ 
+<!-- 이건 xml이 아니라 text. => 여기선 text로 돌려주는걸 기억 -->
+ 
+</body>
+</html>

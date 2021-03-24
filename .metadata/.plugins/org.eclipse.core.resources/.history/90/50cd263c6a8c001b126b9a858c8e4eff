@@ -1,0 +1,138 @@
+import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Random;
+
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
+
+
+public class Test {
+	
+	static SimpleDateFormat  format1 = new SimpleDateFormat ( "yyyy-MM-dd HH:mm:ss");
+	static Calendar time = Calendar.getInstance();
+	
+	public static void main(String[] args) {
+	
+//		String data = "{service:testService, inputData:INDATA, outputData:OUTDATA}";
+		String data = "{\"common\":{\"guid\":\"2021-ouz4vhrt4l\",\"trxDatetim\":\"1616551528111\",\"requestType\":\"S\",\"responseType\":\"NM\"},\"biz\":{\"service\":\"testService\",\"inputData\":\"INDATA\",\"outputData\":\"OUTDATA\"}}";
+		JSONParser parser = new JSONParser();
+		try {
+			JSONObject obj = (JSONObject)parser.parse(data);
+			
+			
+			JSONObject resObj = new JSONObject();
+			JSONObject bizJsonList = new JSONObject();
+			ArrayList<JSONObject> list = new ArrayList<JSONObject>();
+			
+			resObj.put("result", true);
+			
+			Random rd = new Random();
+			
+			int leftLimit = 48; // numeral '0'
+			int rightLimit = 122; // letter 'z'
+			int targetStringLength = 10;
+			String generatedString = rd.ints(leftLimit,rightLimit + 1)
+					  .filter(i -> (i <= 57 || i >= 65) && (i <= 90 || i >= 97))
+					  .limit(targetStringLength)
+					  .collect(StringBuilder::new, StringBuilder::appendCodePoint, StringBuilder::append)
+					  .toString();
+			
+			Timestamp timestamp = new Timestamp(System.currentTimeMillis());
+			
+			int size = ((rd.nextInt()%10) + 1);
+			
+			for (int i =0 ; i < size; i++ ) {			
+				JSONObject tObj = new JSONObject();
+				tObj.put("rStr", generatedString);
+				tObj.put("rInt", rd.nextInt());
+				tObj.put("rLong", rd.nextLong());
+				tObj.put("rBoolean", rd.nextBoolean());
+				tObj.put("rTimestamp", timestamp);				
+				list.add(tObj);
+			}
+			
+			JSONObject[] jsons = new JSONObject[list.size()];
+			list.toArray(jsons);
+			
+//			JSONPObject lObj = new JSONPObject("BIZDATA", list);
+			
+			JSONArray ja = new JSONArray();
+			
+			ja.add(resObj);
+			ja.add(bizJsonList);
+			
+//			resObj.put("BIZDATA", new JSONObject(list));
+			
+			System.out.println(ja.toJSONString());
+			
+			System.out.println(jsons);
+
+			
+//			String format_time1 = format1.format(time.getTime());
+//			System.out.println(format_time1);
+			
+//			HashMap map =  obj.get("common");
+//			System.out.println( map.get("requestType")); 
+//			System.out.println( obj.toJSONString()); 
+////			map.put("requestType", "R");
+//			((HashMap)obj.get("common")).put("requestType", "R");
+//			obj.put("isSucc", false);
+//			System.out.println( map.get("requestType")); 
+//			System.out.println( obj.get("isSucc")); 
+//			System.out.println( obj.toJSONString()); 
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	private void arrIntoJson() throws JSONException {
+		 
+	    String name = "";
+	    String myCode = "";
+	    String motherCode = "";
+	    JSONArray jsonArr1 = new JSONArray();
+	    
+	    for(int i=0; i<2; i++) {
+	    
+	        if(i==0) {
+	            name = "jihyun";
+	            myCode = "[01,02,03,04]";
+	            motherCode = "[99,98,97]";
+	        }else {
+	            name = "yumi";
+	            myCode = "[11,22,33]";
+	            motherCode = "[20,30]";
+	        }
+	        
+	        String updatedTime = String.valueOf(DateUtil.getLocalDateTime("yyyy-MM-dd HH:mm:ss"));
+	        String[] myCodeArr = myCode.substring(1, myCode.length()-1).split(",");
+	        String[] motherCodeArr = motherCode.substring(1, motherCode.length()-1).split(",");
+	        
+	        JSONObject jsonObj1 = new JSONObject();
+	        jsonObj1.put("name", name);
+	        jsonObj1.put("myCode", myCodeArr);
+	        jsonObj1.put("motherCode", motherCodeArr);
+	        jsonObj1.put("updatedTime", updatedTime);
+	        jsonArr1.put(jsonObj1);
+	    }
+	    
+	    ArrayList<JSONObject> arrayJson = new ArrayList<JSONObject>();
+	    
+	    for (int k = 0; k < jsonArr1.length(); k++) {
+	        JSONObject tempJson = jsonArr1.getJSONObject(k);
+	        arrayJson.add(tempJson);
+	    }
+	    
+	    JSONObject[] jsons = new JSONObject[arrayJson.size()];
+	    arrayJson.toArray(jsons);
+	    
+	    System.out.println(jsons);
+	}
+
+	
+}

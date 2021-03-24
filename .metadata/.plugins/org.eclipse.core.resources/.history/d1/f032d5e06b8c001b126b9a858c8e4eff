@@ -1,0 +1,59 @@
+package com.kakaobank.in.service;
+
+import java.io.BufferedInputStream;
+import java.io.InputStream;
+
+import org.apache.http.HttpResponse;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.entity.StringEntity;
+import org.apache.http.impl.client.HttpClientBuilder;
+
+public class BizCallService {
+	
+	private HttpClient bizClient = null;	
+	
+	public Boolean callBizController(Object bizData, String bizUrl) {
+
+		String res = "";
+
+		try {
+
+			if (bizClient == null)
+				bizClient = HttpClientBuilder.create().build(); // HttpClient 생성
+
+			HttpPost postRequest = new HttpPost(bizUrl); // POST 메소드 URL 새성
+
+			postRequest.setHeader("Accept", "application/json");
+			postRequest.setHeader("Connection", "keep-alive");
+			postRequest.setHeader("Content-Type", "application/json");
+			postRequest.setEntity(new StringEntity(bizData.toString())); // json 메시지 입력
+
+			HttpResponse response = bizClient.execute(postRequest);
+
+			// Response 출력
+			if (response.getStatusLine().getStatusCode() == 200) {
+				byte[] buffer = new byte[1024];
+				InputStream is = response.getEntity().getContent();
+				BufferedInputStream bis = new BufferedInputStream(is);
+
+				while ((bis.read(buffer)) != -1) {
+					res += new String(buffer, "utf-8");
+				}
+				res = res.trim();
+			} else {
+				System.out.println("response is error : " + response.getStatusLine().getStatusCode());
+			}
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return false;
+		}
+
+		if (res.equals("SUCC"))
+			return true;
+
+		return false;
+	}
+
+}

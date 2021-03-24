@@ -1,0 +1,17 @@
+2021-03-22 00:32:36 [INFO ] com.kakaobank.kchan.KchanApplication - Starting KchanApplication using Java 1.8.0_265 on jaechan7-kim001 with PID 92412 (D:\SDS\PROJECT\workspace\kchan\target\classes started by jaechan7.kim in D:\SDS\PROJECT\workspace\kchan)
+2021-03-22 00:32:36 [INFO ] com.kakaobank.kchan.KchanApplication - No active profile set, falling back to default profiles: default
+2021-03-22 00:32:38 [INFO ] com.kakaobank.kchan.KchanApplication - Started KchanApplication in 3.108 seconds (JVM running for 4.04)
+2021-03-22 00:32:48 [INFO ] com.kakaobank.kchan.KchanApplication - Starting KchanApplication using Java 1.8.0_265 on jaechan7-kim001 with PID 94912 (D:\SDS\PROJECT\workspace\kchan\target\classes started by jaechan7.kim in D:\SDS\PROJECT\workspace\kchan)
+2021-03-22 00:32:48 [INFO ] com.kakaobank.kchan.KchanApplication - No active profile set, falling back to default profiles: default
+2021-03-22 00:32:59 [WARN ] c.k.k.controller.InboundController - 경고
+2021-03-22 00:32:59 [INFO ] c.k.k.controller.InboundController - 정보성 로그
+2021-03-22 00:32:59 [ERROR] c.k.k.controller.InboundController - 에러
+2021-03-22 00:33:00 [WARN ] c.k.k.controller.InboundController - 경고
+2021-03-22 00:33:00 [INFO ] c.k.k.controller.InboundController - 정보성 로그
+2021-03-22 00:33:00 [ERROR] c.k.k.controller.InboundController - 에러
+2021-03-22 00:33:00 [WARN ] c.k.k.controller.InboundController - 경고
+2021-03-22 00:33:00 [INFO ] c.k.k.controller.InboundController - 정보성 로그
+2021-03-22 00:33:00 [ERROR] c.k.k.controller.InboundController - 에러
+2021-03-22 00:33:01 [WARN ] c.k.k.controller.InboundController - 경고
+2021-03-22 00:33:01 [INFO ] c.k.k.controller.InboundController - 정보성 로그
+2021-03-22 00:33:01 [ERROR] c.k.k.controller.InboundController - 에러

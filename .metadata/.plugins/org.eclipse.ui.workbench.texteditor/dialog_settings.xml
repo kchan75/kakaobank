@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
+		<item key="selection" value="outUrl"/>
+		<item key="wrap" value="true"/>
+		<item key="casesensitive" value="false"/>
+		<item key="wholeword" value="false"/>
+		<item key="incremental" value="false"/>
+		<item key="isRegEx" value="false"/>
+		<list key="findhistory">
+			<item value="outUrl"/>
+			<item value="LOGSTASH_URL"/>
+			<item value="inserver"/>
+			<item value="name"/>
+			<item value="Pattern"/>
+			<item value="pattern"/>
+			<item value="msg"/>
+			<item value="OutLog"/>
+			<item value="encoder"/>
+			<item value="com.kakaobank.out.outlog"/>
+			<item value="com.kakaobank.in.inlog"/>
+			<item value="com.kakaobank.out.outLog"/>
+			<item value="in"/>
+			<item value="com.kakaobank.in"/>
+			<item value="log"/>
+		</list>
+		<list key="replacehistory">
+			<item value="outClient"/>
+			<item value="OutLog"/>
+			<item value="CommonVO"/>
+		</list>
+	</section>
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
+		<item key="DIALOG_X_ORIGIN" value="1157"/>
+		<item key="DIALOG_Y_ORIGIN" value="606"/>
+		<item key="DIALOG_WIDTH" value="663"/>
+		<item key="DIALOG_HEIGHT" value="434"/>
+		<item key="DIALOG_FONT_NAME" value="1|맑은 고딕|10.5|0|WINDOWS|1|-14|0|0|0|400|0|0|0|1|0|0|0|0|맑은 고딕"/>
+	</section>
+</section>

@@ -1,0 +1,130 @@
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.Scanner;
+
+
+
+class Pair{
+	int x;
+	int y;
+	public Pair(int xx,int yy) {
+		this.x = xx;
+		this.y = yy;
+	}
+}
+
+public class Main {
+	
+	public static final int BLANK = 0;
+	public static final int WALL = 1;
+	public static final int VIRUS =2;	
+	public static final int[] dx = {0,0,1,-1};	
+	public static final int[] dy = {1,-1,0,0};	
+	
+	public static int n,m;
+	public static int[][] inputArr;
+	public static int ans = Integer.MIN_VALUE;
+	
+	public static void main(String[] args) {
+		// 스캐너
+		Scanner sc = new Scanner(System.in);
+		n = sc.nextInt();
+		m = sc.nextInt();
+		
+		//입력값 받는곳 크기할당
+		inputArr = new int[n][m];
+		
+		// 입력값 받기
+		for (int i = 0; i < n ;i++)
+			for (int j = 0; j < m ; j++)
+				inputArr[i][j] = sc.nextInt();
+		
+
+		for (int i = 0; i < n ;i++) {
+			for (int j = 0; j < m ; j++) {
+				if (inputArr[i][j] == BLANK) {
+					inputArr[i][j] = WALL;
+					dfs(1);
+					inputArr[i][j] = BLANK;
+				}
+			}		
+		}
+		System.out.println(ans);
+		
+	}
+	
+	
+	public static void dfs(int cnt) {
+		if (cnt == 3){
+			bfs();
+			return;
+		}
+		
+		for (int i = 0; i < n ;i++) {
+			for (int j = 0; j < m ; j++) {
+				if (inputArr[i][j] == BLANK) {
+					inputArr[i][j] = WALL;
+					dfs( cnt + 1);
+					inputArr[i][j] = BLANK;
+				}
+			}		
+		}
+	}
+	
+	public static void bfs() {
+		int[][] virusMap = new int[n][m];
+		
+		
+		for (int i = 0; i < n ;i++) {
+			for (int j = 0; j < m ; j++) {
+				virusMap[i][j] = inputArr[i][j];
+			}
+		}
+		
+		Queue<Pair> q = new LinkedList<Pair>();
+		
+		for (int i = 0; i < n ;i++) {
+			for (int j = 0; j < m ; j++) {
+				
+				if (virusMap[i][j] == VIRUS) {
+					q.add(new Pair(i,j));
+				}
+			}
+		}
+		
+		while(!q.isEmpty()) {
+			
+			Pair p = q.remove();
+			int x = p.x;
+			int y = p.y;
+			
+			for (int i = 0 ; i < 4;i++ ) {
+				int nx = x + dx[i];
+				int ny = y + dy[i];
+			
+				if( nx < 0 || nx >= n)
+					continue;
+				if( ny < 0 || ny >= m)
+					continue;
+					
+				
+				if (virusMap[nx][ny] == BLANK);
+					virusMap[nx][ny] = VIRUS;
+					q.add(new Pair(nx, ny));
+			}
+		}
+		
+		
+		int nAns = 0;
+		for (int i = 0; i < n ;i++) {
+			for (int j = 0; j < m ; j++) {				
+				if (virusMap[i][j] == BLANK) {
+					nAns++;
+				}
+			}
+		}
+		
+		ans = Math.max(nAns, ans);
+		
+	}
+}

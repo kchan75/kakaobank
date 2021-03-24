@@ -1,0 +1,39 @@
+function fn_initCmmnnCd(){
+
+  var arrPrmtr = new Array(); //Object를 배열로 저장할 Array
+  var objPrmtr = new Object(); //key, value형태로 저장할 Object
+  
+  //시도 조회
+  objPrmtr = new Object();
+  objPrmtr.trgtObj = 'objCity';
+  objPrmtr.codeId = '064';
+  objPrmtr.useYn = 'Y';
+  arrPrmtr.push(objPrmtr);
+
+  //상품 종류 조회
+  objPrmtr = new Object();
+  objPrmtr.trgtObj = 'objGoodsType';
+  objPrmtr.codeId = '066';
+  objPrmtr.useYn = 'Y';
+  arrPrmtr.push(objPrmtr);
+
+  $.ajax({
+          url:'/rep/cm/selectCmmnnCodeList.do',
+          type:'post',
+          contentType:'application/json; charset=UTF-8'
+          dataType:'json',
+          data:JSON.stringify(arrPrmtr),
+          success:function(data){
+
+			  //시도 세팅
+			  data.objCity.forEach(function(item, idx, arr){
+				  $('#select_locate').append("<option value='"+item.detailCode+"'>"+item.codeNm+"</option>");
+			  });
+
+			  //상품종류 세팅
+			  data.objGoodsType.forEach(function(item, idx, arr){
+				  $('#selectGoodsType').append("<option value='"+item.detailCode+"'>"+item.codeNm+"</option>");
+			  });
+          }
+  });
+}

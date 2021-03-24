@@ -1,0 +1,15 @@
+package com.kakaobank.kchan.inlog;
+
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+
+
+public class InLog {
+	private final org.slf4j.Logger log = org.slf4j.LoggerFactory.getLogger(InLog.class);	
+	private JSONParser parser = new JSONParser();
+	
+	public void inLog(JSONObject[] obj) {
+			log.info(obj);		
+	}
+	
+}

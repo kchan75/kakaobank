@@ -1,0 +1,11 @@
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+
+public class Test {
+	public static void main(String[] args) {
+	
+		String data = "{service=testService, inputData=INDATA, outputData=OUTDATA}";
+		JSONParser parser = new JSONParser();
+		JSONObject obj = (JSONObject)parser.parse(data);
+	}
+}

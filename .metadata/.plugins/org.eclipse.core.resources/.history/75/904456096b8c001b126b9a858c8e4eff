@@ -1,0 +1,14 @@
+package com.kakaobank.biz.service;
+
+import org.json.simple.JSONObject;
+
+public class RandomDataService {
+	public JSONObject getData(Boolean isSucc) {
+		JSONObject resObj = new JSONObject();			
+		resObj.put("result", true);
+		
+		
+		
+		return resObj;
+	}
+}

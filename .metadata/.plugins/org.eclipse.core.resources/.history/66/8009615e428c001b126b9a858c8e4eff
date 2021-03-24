@@ -1,0 +1,64 @@
+<html>
+<head>
+<title>test</title>
+<script language="javascript">
+	function setData(){
+		  var time= new Date(); //시간받기위해서 new date
+		  document.getElementById("trxDatetim").value=time.getTime();
+		  document.getElementById("guid").value=time.getFullYear() + "-"+  Math.random().toString(36).substr(2,11);
+		}
+</script>
+</head>
+
+<body >
+	<form id="formElem">
+		<label> guid&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; </label><input type="text" name="guid" id="guid" value="2021-fztdy6ae9m7"><br/> 
+		<label> trxDatetim &nbsp; &nbsp;&nbsp; </label> <input type="text" id="trxDatetim" value="1616549342993"> <br/>
+		<label> requestType&nbsp; &nbsp; </label> <input type="text" name="requestType" value="S"> <br/>
+		<label> responseType&nbsp;  </label> <input type="text" name="responseType" value="NM"> <br/>
+		<input type="submit" onclick="setData()">
+	</form>
+	<div id="div"></div>
+</body>
+
+<script>
+    formElem.onsubmit = async (e) => {
+      e.preventDefault();
+      var form = document.querySelector("#formElem");
+     // var form = document.forms[0];
+
+        data = {
+          "common":
+          {
+        	  guid : form.querySelector('input[name="guid"]').value,
+        	  trxDatetim : form.querySelector('input[name="trxDatetim"]').value,
+        	  requestType : form.querySelector('input[name="requestType"]').value,
+        	  responseType : form.querySelector('input[name="responseType"]').value
+          },
+	      "biz":
+	      {
+	      	  service : "testService"
+	      	  inputData : "INDATA"
+	      	  outputData : "OUTDATA"
+	      }
+        }
+        
+        
+        
+        let response = await fetch('http://localhost:8080/kchan', {
+                method: 'POST', // or 'PUT'
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Access-Control-Allow-Origin':'*'
+                },
+                body: JSON.stringify(data),
+        })
+
+        //let text = await response.text(); // read response body as text
+        console.log("TEST");
+        console.log(response);
+        
+        document.querySelector("#div").innerHTML = response.data;
+    };
+</script>
+</html>

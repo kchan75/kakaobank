@@ -1,0 +1,64 @@
+<html>
+<head>
+<title>test</title>
+<script language="javascript">
+	function time(){
+	  var time= new Date(); //시간받기위해서 new date
+		 document.getElementById("trxDatetim").value=time.getTime();
+	     setInterval("time()",1000);     //1초 지난후 time()실행
+	}
+</script>
+</head>
+
+<body>
+	<form id="formElem">
+		<label> guid&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; </label><input type="text" name="guid" value="RANDOM"><br/> 
+		<label> trxDatetim &nbsp; &nbsp;&nbsp; </label> <input type="text" id="trxDatetim" > <br/>
+		<label> requestType&nbsp; &nbsp; </label> <input type="text" name="requestType" value="S"> <br/>
+		<label> responseType&nbsp;  </label> <input type="text" name="responseType" value="NM"> <br/>
+		<input type="submit">
+	</form>
+	<div id="div"></div>
+</body>
+
+<script>
+    formElem.onsubmit = async (e) => {
+      e.preventDefault();
+      var form = document.querySelector("#formElem");
+     // var form = document.forms[0];
+
+        data = {
+          "common":
+          {
+        	  firstName : form.querySelector('input[name="firstname"]').value,
+          	  lastName : form.querySelector('input[name="lastname"]').value,
+          	  age : 5
+          },
+	      "biz":
+	      {
+	      	  bizFirst : form.querySelector('input[name="firstname"]').value,
+	      	  bizLast : form.querySelector('input[name="lastname"]').value,
+	          age : 12
+	      }
+        }
+        
+        
+        
+		let ip = form.querySelector('input[name="firstname"]').value
+        let response = await fetch('http://localhost:8080/kchan', {
+                method: 'POST', // or 'PUT'
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Access-Control-Allow-Origin':'*'
+                },
+                body: JSON.stringify(data),
+        })
+
+        //let text = await response.text(); // read response body as text
+        console.log("TEST");
+        console.log(response);
+        
+        document.querySelector("#div").innerHTML = response.data;
+    };
+</script>
+</html>

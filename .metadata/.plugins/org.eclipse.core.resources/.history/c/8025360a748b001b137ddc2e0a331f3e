@@ -1,0 +1,8 @@
+#Server Port
+server.port=8090
+
+#Biz
+app.biz=biz
+
+#Biz Controller URL
+biz.url=http://localhost:8088/biz

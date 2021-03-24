@@ -1,0 +1,111 @@
+<html>
+<head>
+<title>test</title>
+<script language="javascript">
+	function setData(){
+		  var time= new Date(); //시간받기위해서 new date
+		  document.getElementById("trxDatetim").value=time.getTime();
+		  document.getElementById("guid").value=time.getFullYear() + "-"+  Math.random().toString(36).substr(2,11);
+		}
+</script>
+</head>
+
+<body >
+	<h3>테스트하시는 HOST IP와 PORT를 입력하세요</h3>
+	<h5>로컬테스트 : 127.0.0.1/8080</br>
+	    GCP테스트 : 35.225.246.187/8000</br>
+	           그외 서버는  입력부탁드립니다.</br>	
+	</h5>
+	<input type="text" id="sendHost" value="35.225.246.187" />
+	<input type="text" id="sendPort" value="8000" />
+	<h2>송신데이터</h2>
+	<div id="sendCommon"></div>
+	<div id="sendbiz"></div>
+
+	
+	<form id="formElem">
+		<label> guid&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; </label><input type="text" name="guid" id="guid" value="2021-fztdy6ae9m7">
+		<br/> 
+		<label> trxDatetim &nbsp; &nbsp;&nbsp; </label> <input type="text" name="trxDatetim" id="trxDatetim" value="1616549342993"> 
+		<br/>
+		<label> requestType&nbsp; &nbsp; </label> <input type="text" name="requestType" value="S"> 
+		<br/>
+		<label> responseType&nbsp;  </label> <input type="text" name="responseType" value="NM"> 
+		<br/>
+		<input type="submit" onclick="setData()">
+	</form>
+
+	<h2>수신데이터</h2>
+	<div id="resCommon"></div>
+	<div id="resBiz"></div>
+	<div id="resBizout"></div>
+	<form id="formElem2">
+		<label> result guid&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;</label><input type="text" name="rGuid" id="rGuid" value="">		
+		<br/> 
+		<label> result trxDatetim &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label> <input type="text" name="rTrxDatetim" id="rTrxDatetim" value=""> 		
+		<br/>
+		<label> result requestType &nbsp; &nbsp; </label> <input type="text" name="rRequestType" id="rRequestType" > 		
+		<br/>
+		<label> result responseType &nbsp;  </label> <input type="text" name="rResponseType" id="rResponseType"> 
+		<br/>
+	</form>
+	
+</body>
+
+<script>
+    formElem.onsubmit = async (e) => {
+      e.preventDefault();
+      var form = document.querySelector("#formElem");
+     // var form = document.forms[0];
+
+     
+        data = {
+          "common":
+          {
+        	  guid : form.querySelector('input[name="guid"]').value,
+        	  trxDatetim : form.querySelector('input[name="trxDatetim"]').value,
+        	  requestType : form.querySelector('input[name="requestType"]').value,
+        	  responseType : form.querySelector('input[name="responseType"]').value
+          },
+	      "biz":
+	      {
+	      	  service : "testService",
+	      	  inputData : "INDATA",
+	      	  outputData : "OUTDATA"
+	      }
+        }
+		document.querySelector("#sendCommon").innerText=JSON.stringify(data.common)
+		document.querySelector("#sendBiz").innerText=JSON.stringify(data.biz)
+		
+		URL = document.querySelector("#sendHost").value
+		PORT = document.querySelector("#sendPort").value
+
+		URL = 'http://' + URL + ":"  + PORT + "/kchan"
+		
+        let response = fetch(URL, {
+                method: 'POST', // or 'PUT'
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Access-Control-Allow-Origin':'*'
+                },
+                body: JSON.stringify(data),
+        }).then(response => response.json())
+          .then(data => {
+        	  //document.querySelector("#div").innerHTML = data;
+        	  //console.log(data.common.guid);
+        	  //console.log(data.common.trxDatetim);
+        	  //console.log(data.common.requestType);
+        	  //console.log(data.common.responseType);
+        	  document.getElementById("rGuid").value=data.common.guid
+        	  document.getElementById("rTrxDatetim").value=data.common.trxDatetim
+        	  document.getElementById("rRequestType").value=data.common.requestType
+        	  document.getElementById("rResponseType").value=data.common.responseType
+        	  document.querySelector("#resCommon").innerText=JSON.stringify(data.common)
+        	  //document.querySelector("#resBiz").innerText=JSON.stringify(data.biz)
+        	  document.querySelector("#resBizout").innerText=JSON.stringify(data.bizout)
+        	  
+          })
+		
+    };
+</script>
+</html>

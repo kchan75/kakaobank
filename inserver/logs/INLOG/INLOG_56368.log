@@ -1,0 +1,8 @@
+{
+  "timestamp" : "2021-03-24T19:39:06",
+  "level" : "INFO",
+  "thread" : "http-nio-8080-exec-10",
+  "logger" : "com.kakaobank.in.inlog.InLog",
+  "message" : "{\"biz\":{\"service\":\"testService\",\"inputData\":\"INDATA\",\"outputData\":\"OUTDATA\"},\"common\":{\"guid\":\"2021-2kswei5modf\",\"trxDatetim\":\"1616582346770\",\"requestType\":\"S\",\"responseType\":\"NM\"}}",
+  "context" : "default"
+}

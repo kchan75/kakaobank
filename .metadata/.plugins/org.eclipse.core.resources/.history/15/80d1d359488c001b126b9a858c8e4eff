@@ -1,0 +1,124 @@
+package com.kakaobank.in.controller;
+
+import java.util.Map;
+
+import javax.annotation.PostConstruct;
+
+import org.json.simple.JSONObject;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.kakaobank.in.inlog.InLog;
+import com.kakaobank.in.service.BizCallService;
+import com.kakaobank.in.service.OutCallService;
+
+@RestController
+public class InboundController {
+
+	private static final org.slf4j.Logger log = org.slf4j.LoggerFactory.getLogger(InboundController.class);
+
+	@Value("${app.biz}")
+	private String biz;
+
+	@Value("${biz.url}")
+	private String bizUrl;
+
+	@Value("${out.url}")
+	private String outUrl;
+
+	InLog IL = new InLog();
+
+	private BizCallService bizCall = new BizCallService();
+	private OutCallService outCall = new OutCallService();
+
+	@PostConstruct
+	private void init() {
+		// TODO Auto-generated method stub
+		log.info("InboundController START");
+	}
+	
+	@CrossOrigin(origins = "*")
+	@RequestMapping(value = "/kchan", method = RequestMethod.POST)
+	public String start(@RequestBody JSONObject params) {
+
+		/*
+		 * 입력전문 로깅 
+		 * 1. File 로깅 
+		 * 2. ELK를 위한 Logstash - 해당부분은 logback의  appender 이용
+		 */
+		IL.inLog(params);
+
+		/*
+		 * Business Controller 호출 Biz에서는 하나이상의 RDB 호출(FW에서 DataSource 관리) 해당 FW는 조회용으로
+		 * BIZ 레이어에서 데이터의 변경이 발생하지 않도록 트랜잭션 관리 필요
+		 */
+		System.out.println(params.toJSONString((Map) params.get(this.biz)));
+		
+		boolean isSucc = bizCall.callBizController(params.get(this.biz), this.bizUrl);
+
+		if (isSucc)
+			log.info("성공");
+		else
+			log.info("실패");
+			
+
+		/*
+		 * Outbound Controller 호출
+		 * 1. 출력전문 로깅
+		 * 2. ELK를 위한 Logstash - 해당부분은 logback의  appender 이용
+		 */
+		
+		outCall.callOutController(params, this.outUrl, isSucc);
+		
+
+		return "SUCC";
+	}
+
+//	private Boolean callBizController(Object bizData) {
+//
+//		String res = "";
+//
+//		try {
+//			
+//			if (bizClient == null)
+//				bizClient = HttpClientBuilder.create().build(); // HttpClient 생성
+//			
+//			HttpPost postRequest = new HttpPost(this.bizUrl); // POST 메소드 URL 새성
+//
+//			postRequest.setHeader("Accept", "application/json");
+//			postRequest.setHeader("Connection", "keep-alive");
+//			postRequest.setHeader("Content-Type", "application/json");
+//			postRequest.setEntity(new StringEntity(bizData.toString())); // json 메시지 입력
+//
+//			HttpResponse response = bizClient.execute(postRequest);
+//
+//			// Response 출력
+//			if (response.getStatusLine().getStatusCode() == 200) {
+//				byte[] buffer = new byte[1024];
+//				InputStream is = response.getEntity().getContent();
+//				BufferedInputStream bis = new BufferedInputStream(is);
+//
+//				while ((bis.read(buffer)) != -1) {
+//					res += new String(buffer, "utf-8");
+//				}
+//				res = res.trim();
+//			} else {
+//				System.out.println("response is error : " + response.getStatusLine().getStatusCode());
+//			}
+//		} catch (Exception e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//			return false;
+//		}
+//		
+//		if (res.equals("SUCC"))
+//			return true;
+//
+//		return false;
+//	}
+
+}

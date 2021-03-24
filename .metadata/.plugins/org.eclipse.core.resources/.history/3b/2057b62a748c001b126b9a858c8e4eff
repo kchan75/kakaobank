@@ -1,0 +1,9 @@
+package com.kakaobank.out.errlog;
+
+public class ErrLog {
+	private final org.slf4j.Logger log = org.slf4j.LoggerFactory.getLogger(ErrLog.class);
+
+	public void outLog(String outData) {
+		log.info(outData);
+	}
+}

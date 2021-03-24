@@ -1,0 +1,120 @@
+{
+  "timestamp" : "2021-03-24T18:16:58",
+  "level" : "INFO",
+  "thread" : "http-nio-8088-exec-1",
+  "logger" : "com.kakaobank.biz.bizlog.BizLog",
+  "message" : "{\"service\":\"testService\",\"inputData\":\"INDATA\",\"outputData\":\"OUTDATA\"}",
+  "context" : "default"
+}
+{
+  "timestamp" : "2021-03-24T18:16:59",
+  "level" : "INFO",
+  "thread" : "http-nio-8088-exec-2",
+  "logger" : "com.kakaobank.biz.bizlog.BizLog",
+  "message" : "{\"service\":\"testService\",\"inputData\":\"INDATA\",\"outputData\":\"OUTDATA\"}",
+  "context" : "default"
+}
+{
+  "timestamp" : "2021-03-24T18:16:59",
+  "level" : "INFO",
+  "thread" : "http-nio-8088-exec-3",
+  "logger" : "com.kakaobank.biz.bizlog.BizLog",
+  "message" : "{\"service\":\"testService\",\"inputData\":\"INDATA\",\"outputData\":\"OUTDATA\"}",
+  "context" : "default"
+}
+{
+  "timestamp" : "2021-03-24T18:16:59",
+  "level" : "INFO",
+  "thread" : "http-nio-8088-exec-4",
+  "logger" : "com.kakaobank.biz.bizlog.BizLog",
+  "message" : "{\"service\":\"testService\",\"inputData\":\"INDATA\",\"outputData\":\"OUTDATA\"}",
+  "context" : "default"
+}
+{
+  "timestamp" : "2021-03-24T18:17:00",
+  "level" : "INFO",
+  "thread" : "http-nio-8088-exec-5",
+  "logger" : "com.kakaobank.biz.bizlog.BizLog",
+  "message" : "{\"service\":\"testService\",\"inputData\":\"INDATA\",\"outputData\":\"OUTDATA\"}",
+  "context" : "default"
+}
+{
+  "timestamp" : "2021-03-24T18:17:00",
+  "level" : "INFO",
+  "thread" : "http-nio-8088-exec-6",
+  "logger" : "com.kakaobank.biz.bizlog.BizLog",
+  "message" : "{\"service\":\"testService\",\"inputData\":\"INDATA\",\"outputData\":\"OUTDATA\"}",
+  "context" : "default"
+}
+{
+  "timestamp" : "2021-03-24T18:17:00",
+  "level" : "INFO",
+  "thread" : "http-nio-8088-exec-7",
+  "logger" : "com.kakaobank.biz.bizlog.BizLog",
+  "message" : "{\"service\":\"testService\",\"inputData\":\"INDATA\",\"outputData\":\"OUTDATA\"}",
+  "context" : "default"
+}
+{
+  "timestamp" : "2021-03-24T18:17:00",
+  "level" : "INFO",
+  "thread" : "http-nio-8088-exec-8",
+  "logger" : "com.kakaobank.biz.bizlog.BizLog",
+  "message" : "{\"service\":\"testService\",\"inputData\":\"INDATA\",\"outputData\":\"OUTDATA\"}",
+  "context" : "default"
+}
+{
+  "timestamp" : "2021-03-24T18:17:01",
+  "level" : "INFO",
+  "thread" : "http-nio-8088-exec-9",
+  "logger" : "com.kakaobank.biz.bizlog.BizLog",
+  "message" : "{\"service\":\"testService\",\"inputData\":\"INDATA\",\"outputData\":\"OUTDATA\"}",
+  "context" : "default"
+}
+{
+  "timestamp" : "2021-03-24T18:17:01",
+  "level" : "INFO",
+  "thread" : "http-nio-8088-exec-10",
+  "logger" : "com.kakaobank.biz.bizlog.BizLog",
+  "message" : "{\"service\":\"testService\",\"inputData\":\"INDATA\",\"outputData\":\"OUTDATA\"}",
+  "context" : "default"
+}
+{
+  "timestamp" : "2021-03-24T18:17:02",
+  "level" : "INFO",
+  "thread" : "http-nio-8088-exec-1",
+  "logger" : "com.kakaobank.biz.bizlog.BizLog",
+  "message" : "{\"service\":\"testService\",\"inputData\":\"INDATA\",\"outputData\":\"OUTDATA\"}",
+  "context" : "default"
+}
+{
+  "timestamp" : "2021-03-24T18:17:02",
+  "level" : "INFO",
+  "thread" : "http-nio-8088-exec-2",
+  "logger" : "com.kakaobank.biz.bizlog.BizLog",
+  "message" : "{\"service\":\"testService\",\"inputData\":\"INDATA\",\"outputData\":\"OUTDATA\"}",
+  "context" : "default"
+}
+{
+  "timestamp" : "2021-03-24T18:17:02",
+  "level" : "INFO",
+  "thread" : "http-nio-8088-exec-3",
+  "logger" : "com.kakaobank.biz.bizlog.BizLog",
+  "message" : "{\"service\":\"testService\",\"inputData\":\"INDATA\",\"outputData\":\"OUTDATA\"}",
+  "context" : "default"
+}
+{
+  "timestamp" : "2021-03-24T18:17:03",
+  "level" : "INFO",
+  "thread" : "http-nio-8088-exec-4",
+  "logger" : "com.kakaobank.biz.bizlog.BizLog",
+  "message" : "{\"service\":\"testService\",\"inputData\":\"INDATA\",\"outputData\":\"OUTDATA\"}",
+  "context" : "default"
+}
+{
+  "timestamp" : "2021-03-24T18:17:03",
+  "level" : "INFO",
+  "thread" : "http-nio-8088-exec-5",
+  "logger" : "com.kakaobank.biz.bizlog.BizLog",
+  "message" : "{\"service\":\"testService\",\"inputData\":\"INDATA\",\"outputData\":\"OUTDATA\"}",
+  "context" : "default"
+}

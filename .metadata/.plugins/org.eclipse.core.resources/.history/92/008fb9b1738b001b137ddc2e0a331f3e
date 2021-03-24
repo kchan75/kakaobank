@@ -1,0 +1,7 @@
+package com.kakaobank.out;
+
+import org.springframework.boot.SpringApplication;
+
+public class OutApplication {
+
+}

@@ -1,0 +1,20 @@
+package com.kakaobank.kchan.vo;
+
+import java.io.Serializable;
+
+public class CommonVO implements Serializable{
+
+	private String guid;
+
+	private String trxDatetim;
+
+	private String requestType;
+
+	private String responseType;
+
+	
+
+
+
+	
+}

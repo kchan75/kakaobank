@@ -1,0 +1,40 @@
+package com.kakaobank.out.controller;
+
+import java.io.BufferedReader;
+
+import javax.annotation.PostConstruct;
+
+import org.json.simple.JSONObject;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.kakaobank.out.outlog.OutLog;
+
+@RestController
+public class OutboundController {
+
+	OutLog OL = new OutLog();
+
+	@PostConstruct
+	private void init() {
+		// TODO Auto-generated method stub
+		System.out.println("START");
+	}
+
+	@RequestMapping(value = "/out", method = RequestMethod.POST)
+//	public String start(@RequestBody Map<String, Object> params){
+	public String start(@RequestBody String outData) {
+
+		/*
+		 * 입력전문 로깅 1. File 방식 2. Logstash
+		 */
+		// 시스템 로그 로깅
+//		System.out.println(outData);
+		OL.outLog(outData);
+
+		return "SUCC";
+	}
+}

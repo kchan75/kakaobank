@@ -1,0 +1,109 @@
+package com.kakaobank.kchan.controller;
+
+import java.io.BufferedInputStream;
+import java.io.BufferedReader;
+import java.io.InputStream;
+
+import javax.annotation.PostConstruct;
+
+import org.apache.http.HttpResponse;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.entity.StringEntity;
+import org.apache.http.impl.client.HttpClientBuilder;
+import org.json.simple.JSONObject;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.kakaobank.kchan.inlog.InLog;
+
+@RestController
+public class InboundController {
+	
+	private static final org.slf4j.Logger log = org.slf4j.LoggerFactory.getLogger(InboundController.class);
+	
+	@Value("${biz.url}")
+	private String bizUrl;
+	
+	@Value("${app.biz}")
+	private String biz;
+	
+	InLog IL = new InLog();
+	private BufferedReader in = null;
+	
+	@PostConstruct
+	private void init() {
+		// TODO Auto-generated method stub
+		System.out.println("START");		
+	}
+	
+	
+	@RequestMapping(value = "/kchan", method = RequestMethod.POST)
+//	public String start(@RequestBody Map<String, Object> params){
+	public String start(@RequestBody JSONObject params){
+
+		
+		  /* 입력전문 로깅 
+		   * 1. File 방식
+		   * 2. Logstash
+		   * */
+		  //시스템 로그 로깅	
+		  IL.inLog(params);
+		  		  
+		  /* Business Controller 호출
+		   * Biz에서는 하나이상의 RDB 호출(FW에서 DataSource 관리)
+		   * 해당 FW는 조회용으로 BIZ 레이어에서 데이터의 변경이 발생하지 않도록 트랜잭션 관리 필요
+		   */
+		  boolean isSucc = callBizController(params.get(this.biz));
+		  
+		  
+		  /* Outbound Controller 호출
+		   * 
+		   * 
+		   * */
+		  
+		  
+		  return "SUCC";
+	}
+	
+	
+	private Boolean callBizController(Object bizData) {
+		
+		String res = "";
+
+		try {
+						
+			HttpClient client = HttpClientBuilder.create().build(); // HttpClient 생성
+			HttpPost postRequest = new HttpPost(this.bizUrl); //POST 메소드 URL 새성 
+			
+			postRequest.setHeader("Accept", "application/json");
+			postRequest.setHeader("Connection", "keep-alive");
+			postRequest.setHeader("Content-Type", "application/json");
+			postRequest.setEntity(new StringEntity(bizData.toString())); //json 메시지 입력 
+			
+			HttpResponse response = client.execute(postRequest);
+			
+			//Response 출력
+			if (response.getStatusLine().getStatusCode() == 200) {
+				byte[] buffer = new byte[1024];
+				InputStream  is = response.getEntity().getContent(); 
+				BufferedInputStream  bis = new BufferedInputStream(is);
+				
+	            while ((bis.read(buffer)) != -1) {
+	                res += new String(buffer, "utf-8"); 
+	            }	            
+			} else {
+				System.out.println("response is error : " + response.getStatusLine().getStatusCode());
+			}
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return false;
+		} 
+		
+		return true;
+	}
+}

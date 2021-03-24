@@ -1,0 +1,3 @@
+server.port=8080
+biz.url=http://localhost:8088/biz
+app.biz=biz

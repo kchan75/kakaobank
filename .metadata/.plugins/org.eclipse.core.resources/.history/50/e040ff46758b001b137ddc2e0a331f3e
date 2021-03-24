@@ -1,0 +1,5 @@
+package com.kakaobank.in.service;
+
+public class BizCallService {
+
+}

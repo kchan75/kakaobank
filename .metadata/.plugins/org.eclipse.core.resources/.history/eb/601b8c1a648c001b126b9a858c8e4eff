@@ -1,0 +1,14 @@
+import java.sql.Timestamp;
+
+public class TestVO {
+	
+	String rStr;
+	
+	int rInt;
+	
+	long rLong;
+
+	Timestamp rTimestamp;
+
+
+}

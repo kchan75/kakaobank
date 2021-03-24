@@ -1,0 +1,48 @@
+import java.sql.Timestamp;
+
+public class TestVO {
+	
+	String rStr;
+	
+	int rInt;
+	
+	long rLong;
+	
+	Boolean rBoolean;
+
+	Timestamp rTimestamp;
+
+	public String getrStr() {
+		return rStr;
+	}
+
+	public void setrStr(String rStr) {
+		this.rStr = rStr;
+	}
+
+	public int getrInt() {
+		return rInt;
+	}
+
+	public void setrInt(int rInt) {
+		this.rInt = rInt;
+	}
+
+	public long getrLong() {
+		return rLong;
+	}
+
+	public void setrLong(long rLong) {
+		this.rLong = rLong;
+	}
+
+	public Timestamp getrTimestamp() {
+		return rTimestamp;
+	}
+
+	public void setrTimestamp(Timestamp rTimestamp) {
+		this.rTimestamp = rTimestamp;
+	}
+
+
+}

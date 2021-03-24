@@ -1,0 +1,30 @@
+import java.util.HashMap;
+
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
+
+public class Test {
+	public static void main(String[] args) {
+	
+//		String data = "{service:testService, inputData:INDATA, outputData:OUTDATA}";
+		String data = "{\"common\":{\"guid\":\"2021-ouz4vhrt4l\",\"trxDatetim\":\"1616551528111\",\"requestType\":\"S\",\"responseType\":\"NM\"},\"biz\":{\"service\":\"testService\",\"inputData\":\"INDATA\",\"outputData\":\"OUTDATA\"}}";
+		JSONParser parser = new JSONParser();
+		try {
+			JSONObject obj = (JSONObject)parser.parse(data);
+			obj.put("isSucc", false);
+			
+			HashMap map = (HashMap) obj.get("common");
+//			System.out.println( map.get("requestType")); 
+			System.out.println( obj.toJSONString()); 
+			map.put("requestType", "R");
+			
+//			System.out.println( map.get("requestType")); 
+//			System.out.println( obj.get("isSucc")); 
+			System.out.println( obj.toJSONString()); 
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+}

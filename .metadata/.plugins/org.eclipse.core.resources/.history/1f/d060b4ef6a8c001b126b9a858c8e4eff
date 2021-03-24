@@ -1,0 +1,5 @@
+package com.kakaobank.biz.service;
+
+public class RandomDataService {
+
+}

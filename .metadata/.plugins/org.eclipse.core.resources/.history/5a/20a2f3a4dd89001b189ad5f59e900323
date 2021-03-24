@@ -1,0 +1,5 @@
+package com.kakaobank.kchan.vo;
+
+public class CommonVo {
+
+}

@@ -1,0 +1,49 @@
+<html>
+<head>
+    <title>test</title>
+</head>
+
+<body>
+    <form id="formElem">
+        <input type="text" name="firstname" value="Karam">
+        <input type="text" name="lastname" value="Yousef">
+        <input type="submit">
+    </form>
+</body>
+<script>
+    formElem.onsubmit = async (e) => {
+      e.preventDefault();
+      var form = document.querySelector("#formElem");
+     // var form = document.forms[0];
+
+        data = {
+          "common":
+          {
+        	  firstName : form.querySelector('input[name="firstname"]').value,
+          	  lastName : form.querySelector('input[name="lastname"]').value,
+          	  age : 5
+          },
+	      "biz":
+	      {
+	      	  bizFirst : form.querySelector('input[name="firstname"]').value,
+	      	  bizLast : form.querySelector('input[name="lastname"]').value,
+	          age : 12
+	      }
+        }
+        
+        
+        
+
+        let response = await fetch('http://localhost:8080/kchan', {
+                method: 'POST', // or 'PUT'
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data),
+        })
+
+        let text = await response.text(); // read response body as text
+        document.querySelector("#decoded").innerHTML = text;
+    };
+</script>
+</html>

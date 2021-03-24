@@ -1,0 +1,25 @@
+package com.kakaobank.kchan.inlog;
+
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
+
+
+public class InLog {
+	private static final org.slf4j.Logger log = org.slf4j.LoggerFactory.getLogger(InLog.class);	
+	private static JSONParser parser = new JSONParser();
+	
+	public static void inLog(Object obj) {
+		
+		try {
+			Object j = parser.parse( obj.toString() );
+			JSONObject jsonObj = (JSONObject) j;
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+	}
+	
+}

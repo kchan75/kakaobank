@@ -1,0 +1,96 @@
+{
+  "timestamp" : "2021-03-24T18:07:03",
+  "level" : "INFO",
+  "thread" : "http-nio-8080-exec-3",
+  "logger" : "com.kakaobank.in.inlog.InLog",
+  "message" : "{\"biz\":{\"service\":\"testService\",\"inputData\":\"INDATA\",\"outputData\":\"OUTDATA\"},\"common\":{\"guid\":\"2021-2kgvlckeake\",\"trxDatetim\":\"1616576823285\",\"requestType\":\"S\",\"responseType\":\"NM\"}}",
+  "context" : "default"
+}
+{
+  "timestamp" : "2021-03-24T18:07:03",
+  "level" : "INFO",
+  "thread" : "http-nio-8080-exec-4",
+  "logger" : "com.kakaobank.in.inlog.InLog",
+  "message" : "{\"biz\":{\"service\":\"testService\",\"inputData\":\"INDATA\",\"outputData\":\"OUTDATA\"},\"common\":{\"guid\":\"2021-f9mzz6423d4\",\"trxDatetim\":\"1616576823990\",\"requestType\":\"S\",\"responseType\":\"NM\"}}",
+  "context" : "default"
+}
+{
+  "timestamp" : "2021-03-24T18:07:04",
+  "level" : "INFO",
+  "thread" : "http-nio-8080-exec-5",
+  "logger" : "com.kakaobank.in.inlog.InLog",
+  "message" : "{\"biz\":{\"service\":\"testService\",\"inputData\":\"INDATA\",\"outputData\":\"OUTDATA\"},\"common\":{\"guid\":\"2021-ez0238rzdd\",\"trxDatetim\":\"1616576824417\",\"requestType\":\"S\",\"responseType\":\"NM\"}}",
+  "context" : "default"
+}
+{
+  "timestamp" : "2021-03-24T18:07:04",
+  "level" : "INFO",
+  "thread" : "http-nio-8080-exec-6",
+  "logger" : "com.kakaobank.in.inlog.InLog",
+  "message" : "{\"biz\":{\"service\":\"testService\",\"inputData\":\"INDATA\",\"outputData\":\"OUTDATA\"},\"common\":{\"guid\":\"2021-nc9r6b84mmi\",\"trxDatetim\":\"1616576824808\",\"requestType\":\"S\",\"responseType\":\"NM\"}}",
+  "context" : "default"
+}
+{
+  "timestamp" : "2021-03-24T18:07:05",
+  "level" : "INFO",
+  "thread" : "http-nio-8080-exec-7",
+  "logger" : "com.kakaobank.in.inlog.InLog",
+  "message" : "{\"biz\":{\"service\":\"testService\",\"inputData\":\"INDATA\",\"outputData\":\"OUTDATA\"},\"common\":{\"guid\":\"2021-8x1d9b4fr32\",\"trxDatetim\":\"1616576825117\",\"requestType\":\"S\",\"responseType\":\"NM\"}}",
+  "context" : "default"
+}
+{
+  "timestamp" : "2021-03-24T18:07:05",
+  "level" : "INFO",
+  "thread" : "http-nio-8080-exec-8",
+  "logger" : "com.kakaobank.in.inlog.InLog",
+  "message" : "{\"biz\":{\"service\":\"testService\",\"inputData\":\"INDATA\",\"outputData\":\"OUTDATA\"},\"common\":{\"guid\":\"2021-f66cr0fnw9n\",\"trxDatetim\":\"1616576825493\",\"requestType\":\"S\",\"responseType\":\"NM\"}}",
+  "context" : "default"
+}
+{
+  "timestamp" : "2021-03-24T18:07:05",
+  "level" : "INFO",
+  "thread" : "http-nio-8080-exec-9",
+  "logger" : "com.kakaobank.in.inlog.InLog",
+  "message" : "{\"biz\":{\"service\":\"testService\",\"inputData\":\"INDATA\",\"outputData\":\"OUTDATA\"},\"common\":{\"guid\":\"2021-i9u1qq5o19s\",\"trxDatetim\":\"1616576825855\",\"requestType\":\"S\",\"responseType\":\"NM\"}}",
+  "context" : "default"
+}
+{
+  "timestamp" : "2021-03-24T18:07:06",
+  "level" : "INFO",
+  "thread" : "http-nio-8080-exec-10",
+  "logger" : "com.kakaobank.in.inlog.InLog",
+  "message" : "{\"biz\":{\"service\":\"testService\",\"inputData\":\"INDATA\",\"outputData\":\"OUTDATA\"},\"common\":{\"guid\":\"2021-jg7wlthetr\",\"trxDatetim\":\"1616576826160\",\"requestType\":\"S\",\"responseType\":\"NM\"}}",
+  "context" : "default"
+}
+{
+  "timestamp" : "2021-03-24T18:07:06",
+  "level" : "INFO",
+  "thread" : "http-nio-8080-exec-1",
+  "logger" : "com.kakaobank.in.inlog.InLog",
+  "message" : "{\"biz\":{\"service\":\"testService\",\"inputData\":\"INDATA\",\"outputData\":\"OUTDATA\"},\"common\":{\"guid\":\"2021-9jkauqi3vzf\",\"trxDatetim\":\"1616576826485\",\"requestType\":\"S\",\"responseType\":\"NM\"}}",
+  "context" : "default"
+}
+{
+  "timestamp" : "2021-03-24T18:07:06",
+  "level" : "INFO",
+  "thread" : "http-nio-8080-exec-2",
+  "logger" : "com.kakaobank.in.inlog.InLog",
+  "message" : "{\"biz\":{\"service\":\"testService\",\"inputData\":\"INDATA\",\"outputData\":\"OUTDATA\"},\"common\":{\"guid\":\"2021-httpimiwpoh\",\"trxDatetim\":\"1616576826776\",\"requestType\":\"S\",\"responseType\":\"NM\"}}",
+  "context" : "default"
+}
+{
+  "timestamp" : "2021-03-24T18:07:06",
+  "level" : "INFO",
+  "thread" : "http-nio-8080-exec-3",
+  "logger" : "com.kakaobank.in.inlog.InLog",
+  "message" : "{\"biz\":{\"service\":\"testService\",\"inputData\":\"INDATA\",\"outputData\":\"OUTDATA\"},\"common\":{\"guid\":\"2021-zvwgrelqou8\",\"trxDatetim\":\"1616576826994\",\"requestType\":\"S\",\"responseType\":\"NM\"}}",
+  "context" : "default"
+}
+{
+  "timestamp" : "2021-03-24T18:07:07",
+  "level" : "INFO",
+  "thread" : "http-nio-8080-exec-4",
+  "logger" : "com.kakaobank.in.inlog.InLog",
+  "message" : "{\"biz\":{\"service\":\"testService\",\"inputData\":\"INDATA\",\"outputData\":\"OUTDATA\"},\"common\":{\"guid\":\"2021-zc5tg81a3ff\",\"trxDatetim\":\"1616576827255\",\"requestType\":\"S\",\"responseType\":\"NM\"}}",
+  "context" : "default"
+}

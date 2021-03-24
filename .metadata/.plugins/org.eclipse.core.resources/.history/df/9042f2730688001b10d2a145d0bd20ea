@@ -1,0 +1,18 @@
+
+public class Main {
+	
+	public static final int BLANK =0;
+	public static final int WALL = 1;
+	public static final int VIRUS =2;	
+	public static final int[] dx = {0,0,1,-1};	
+	public static final int[] dy = {1,-1,0,0};	
+	
+	public static int n,m;
+	public static int[][] inputArr;
+	public static int[][] map;
+	public static int ans = Integer.MIN_VALUE;
+	
+	public static void main(String[] args) {
+		
+	}
+}

@@ -1,0 +1,5 @@
+package com.kakaobank.kchan.util;
+
+public class FileUtil {
+
+}

@@ -1,0 +1,14 @@
+package com.kakaobank.out.errlog;
+
+public class OutLog {
+	private final org.slf4j.Logger log = org.slf4j.LoggerFactory.getLogger(OutLog.class);
+
+	public void outLog(String outData) {
+		log.info(outData);
+	}
+
+//	public void outLog(Map<String, JSONObject> obj) {
+//		log.info(JSONObject.toJSONString(obj));		
+//	}
+
+}

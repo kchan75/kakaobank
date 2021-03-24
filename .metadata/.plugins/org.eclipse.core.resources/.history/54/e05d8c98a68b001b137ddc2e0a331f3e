@@ -1,0 +1,13 @@
+#Server Port
+server.port=${in.port}
+
+#Biz
+app.biz=biz
+#Biz Controller URL
+biz.url=http://localhost:${biz.port}/biz
+
+
+#Out
+app.out=out
+#Out Controller URL
+out.url=http://localhost:${out.port}/out
