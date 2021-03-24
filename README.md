@@ -34,8 +34,5 @@
 	-javaagent:"D:\kakaobank\scouter\agent.java\scouter.agent.jar" -Dscouter.config="D:\kakaobank\scouter\agent.java\conf\scouter.conf" -Dobj_name=outServer
 
     3. 기동 후 브라우저를 통하여 http://localhost:8080 으로 접속 후 '제출' 버튼 클릭 (여러번 송신가능)
+	![로컬_화면_1](https://user-images.githubusercontent.com/25301903/112365714-4ff4aa80-8d1b-11eb-982d-a1611e64b585.PNG)
 	
-	
-	
-
-
