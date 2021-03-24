@@ -43,10 +43,22 @@
 
 
  - 두번째 : 구글클라우드(GCP)에 접속하여(http://35.225.246.187:8000/)  테스트 하는 방법
+ 
 	    테스트에 앞서 GCP 에 구성되어 있는 버전은 각 서버들을 여러개 기동하였으며 중간에는 haproxy를 통하여 밸런싱하며 
 	    로그는 File 과 함께 ELK(Logstash -> Elastic search -> Kibana) 스택으로 Visualize 하게 구성하였습니다.
 	    (이번 프로젝트에서는 ELK는 현재 x-pack 관련 이슈로 kibana에 접근이 안되는 상황이므로 해당 구조에 대해서만 확인 부탁드립니다.)
-	    또한 각 서버들은 scouter agent와 함께 기동되어 scouter를 통해 각 서버들의 모니터링이 가능합니다.
+	    또한 각 서버들은 scouter agent와 함께 기동되어 scouter를 통해 각 서버들의 모니터링이 가능합니다. 
+	    (scouter client 설치 후 35.225.246.187:6100 으로 접속 후 admin/admin 을 로그인 가능)
+	    
+	    ![GCP_구조도](https://user-images.githubusercontent.com/25301903/112367588-787da400-8d1d-11eb-9043-e59603d357de.PNG)
+	    
+	    다음과 같이 테스트 가능합니다.
+	    ![GCP_화면_1](https://user-images.githubusercontent.com/25301903/112367645-892e1a00-8d1d-11eb-8c06-6ef94a291ce1.PNG)
+	    ![GCP_화면_2](https://user-images.githubusercontent.com/25301903/112367649-89c6b080-8d1d-11eb-851e-13950f70a6a0.PNG)
+
+	    
+	    
+
 	    
 	    
 	
