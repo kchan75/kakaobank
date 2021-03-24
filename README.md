@@ -36,21 +36,6 @@
     3. 기동 후 브라우저를 통하여 http://localhost:8080 으로 접속 후 '제출' 버튼 클릭 (여러번 송신가능)
 	
 	
-	![로컬_화면_1](https://user-images.githubusercontent.com/25301903/112353323-fab29c00-8d0e-11eb-83da-271877db0c4d.PNG)
-
-	![로컬_화면_2](https://user-images.githubusercontent.com/25301903/112353324-fab29c00-8d0e-11eb-96e4-a2901e505beb.PNG)
-
-
-![GCP_화면_2](https://user-images.githubusercontent.com/25301903/112353315-f8e8d880-8d0e-11eb-862a-7ea8e5185982.PNG)
-![haproxy_검증_재기동](https://user-images.githubusercontent.com/25301903/112353319-f9816f00-8d0e-11eb-9901-da60dfdfe08f.PNG)
-![haproxy_설정PNG](https://user-images.githubusercontent.com/25301903/112353322-fa1a0580-8d0e-11eb-9e8c-fdfc893d5ed8.PNG)
-![서버목록](https://user-images.githubusercontent.com/25301903/112353326-fb4b3280-8d0e-11eb-936f-717b7bf99992.PNG)
-![GCP_scouter](https://user-images.githubusercontent.com/25301903/112353327-fbe3c900-8d0e-11eb-8417-b4ea39bf7584.PNG)
-![GCP_로그](https://user-images.githubusercontent.com/25301903/112353330-fd14f600-8d0e-11eb-87b8-a8843c1e668b.PNG)
-![GCP_에러로그샘플](https://user-images.githubusercontent.com/25301903/112353334-fdad8c80-8d0e-11eb-98ff-ce746372fe56.PNG)
-![GCP_출력로그샘플](https://user-images.githubusercontent.com/25301903/112353335-fdad8c80-8d0e-11eb-9d6a-77f519ee4777.PNG)
-![GCP_화면_1](https://user-images.githubusercontent.com/25301903/112353338-fe462300-8d0e-11eb-8a92-8dd2f563ff0f.PNG)
-![GCP_구조도](https://user-images.githubusercontent.com/25301903/112364909-5f272880-8d1a-11eb-88ae-718a0f7094a1.PNG)
-
+	
 
 
